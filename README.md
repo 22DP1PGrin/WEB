@@ -5,7 +5,7 @@ Tiešsaistes bibliotēka Onlib, kurā tiek glabātas dažādas grāmatas. Lietot
 * Autorizācija un reģistrācija;
 * Filtrēšana grāmatas pēc žanra, vērtējumiem un izdošanas datuma;
 * Grāmatu pievienošana savam profilam sadaļā *“Grāmatzīmes”*, lai sekotu, kuras grāmatas jau ir **izlasītas**, kuras ir **plānā**, kuras vēl ir **procesā** un kuras jau ir **pamestas**;
-* Grāmatu vērtēšana, izmantojot **5 ballu** sistēmu;
+* Grāmatu vērtēšana, izmantojot **10 ballu** sistēmu;
 * Jaunu grāmatu pievienošana vietnei un to rediģēšana.
 
 Projekta laikā tiks izmantotas šādas valodas:
