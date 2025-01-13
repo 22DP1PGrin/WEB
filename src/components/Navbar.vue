@@ -132,7 +132,7 @@
     .search:hover {
         transform: none;
     }
-    .search:
+
     .search .input {
         background-color: #ffffff;
         border: 0;
