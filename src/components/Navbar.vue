@@ -3,7 +3,7 @@
     <header>
         <div class="navigation-bar" id="navigation">
             <div class="navbar">
-                <img src="..\..\public\Images\Logo.jpg" > <!-- Attēls ar grāmatas rakstīšanu -->
+                <a href="/html/index.html"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Attēls ar grāmatas rakstīšanu -->
                 <p>&nbsp&nbsp</p>
                 <a class="active" href="../html/index.html"><i style="font-size:17px" class="fa">&#xf015;</i> Home</a> <!-- Saite uz kontaktu lapu -->
                 <div class="dropdown"> <!-- Izveidojam nolaižamo sarakstu -->
@@ -15,15 +15,15 @@
                     </div>
                 </div>
                 
-                <a class="active" href="../html/Contact.html"><i style="font-size:14px" class="fa">&#xf0e0;</i> Contact</a> <!-- Saite uz lapu "Par mums" -->
+                <a class="active" href="../html/Contact.html"><i style="font-size:14px;" class="fa">&#xf0e0;</i> Contact</a> <!-- Saite uz lapu "Par mums" -->
             </div>  
             <div class="account"> <!-- Bloks konta pārvaldīšanai -->
                 <a class="active2" href="#SigIn"><i style="font-size:14px" class="fa">&#xf2bd;</i> Sign in</a> <!-- Saite uz reģistrācijas lapu -->
-                <a class="active2" href="#LogIn"> <i style="font-size:14px" class="fa">&#xf2be;</i> Log in &nbsp &nbsp </a> <!-- Saite uz pierakstīšanās lapu -->
+                <a class="active2" href="#LogIn"> <i style="font-size:14px" class="fa">&#xf2be;</i> Log in</a> <!-- Saite uz pierakstīšanās lapu -->
                 <div class="search">
                     <input type="text" class="input" placeholder="Search...">
                     <button class="btn">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fa fa-search" aria-hidden="true" style="font-size:14px; color: rgba(26, 16, 8, 0.8);;"></i>
                     </button>
                 </div>
             </div>    
@@ -122,41 +122,49 @@
         }
     }
 
+    /* search bar */
+    .search {
+        position: relative;
+        display: flex; /* Use flexbox to align items */
+        align-items: center; /* Center items vertically */
+    }
 
+    .search:hover {
+        transform: none;
+    }
+    .search:
+    .search .input {
+        background-color: #ffffff;
+        border: 0;
+        border-radius: 20px;
+        border-color: rgba(26, 16, 8, 0.8);
+        font-size: 15px;
+        padding: 10px;
+        height: 10px; /* Adjusted height for better visibility */
+        width: 0; /* Start with width 0 */
+        overflow: hidden; /* Hide overflow */
+        opacity: 0;
+    }
 
-/* Existing styles */
-.search {
-    position: relative;
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center items vertically */
-}
+    .search .btn {
+        background-color: #c58667; /* Set background color */
+        border: 2px solid rgba(26, 16, 8, 0.8); /* Remove border */
+        border-radius: 20px;
+        padding: 7px; /* Add padding */
+        cursor: pointer; /* Change cursor to pointer */
+        transition: transform 0.3s ease; /* Add transition for smooth transform */
+        outline: none; /* Remove outline */
+        margin-right: 10px; /* Add margin to the right */
+        width: 33px; /* Set width */
+        height: 33px;
+    }
 
-.search .input {
-    background-color: #FFFFFF;
-    border: 0;
-    font-size: 15px;
-    padding: 10px;
-    height: 10px; /* Adjusted height for better visibility */
-    width: 0; /* Start with width 0 */
-    overflow: hidden; /* Hide overflow */
-    opacity: 0;
-}
-
-.search .btn {
-    background-color: #ffffff; /* Set background color */
-    border: none; /* Remove border */
-    padding: 10px; /* Add padding */
-    font-size: 10px; /* Set font size */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: transform 0.3s ease; /* Add transition for smooth transform */
-    outline: none; /* Remove outline */
-}
-
-.search.active .input {
-    width: 150px; /* Expanded width */
-    height: 5px;
-    opacity: 1; 
-}
+    .search.active .input {
+        width: 150px; /* Expanded width */
+        height: 5px;
+        opacity: 1; 
+        margin: 5px;
+    }
 </style>
 <script>
 
