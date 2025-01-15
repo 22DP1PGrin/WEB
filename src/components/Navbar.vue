@@ -18,8 +18,8 @@
                 <a class="pressed1" href="../html/Contact.html"><i style="font-size:14px;" class="fa">&#xf0e0;</i> Contact</a> <!-- Saite uz lapu "Par mums" -->
             </div>  
             <div class="account"> <!-- Bloks konta pārvaldīšanai -->
-                <a class="pressed2" href="#SigIn"><i style="font-size:14px" class="fa">&#xf2bd;</i> Sign in</a> <!-- Saite uz reģistrācijas lapu -->
-                <a class="pressed2" href="#LogIn"> <i style="font-size:14px" class="fa">&#xf2be;</i> Log in</a> <!-- Saite uz pierakstīšanās lapu -->
+                <a class="pressed2" href="#SigIn"><i style="font-size:16px" class="fa">&#xf2bd;</i> Reģistrācija</a> <!-- Saite uz reģistrācijas lapu -->
+                <a class="pressed2" href="#LogIn"> <i style="font-size:16px" class="fa">&#xf2be;</i> Pieslēgties</a> <!-- Saite uz pierakstīšanās lapu -->
                 <div class="search">
                     <input type="text" class="input" placeholder="Meklēt...">
                     <button class="btn">
@@ -90,9 +90,8 @@
         margin-left: 17px; /* Atstarpes starp saitēm */
         font-size: 17px; /* Fonta izmērs navigācijas tekstam */
         cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
     }
-
-
 
     .activeother{
         .context-menu {cursor: context-menu;}
@@ -102,21 +101,41 @@
         color: rgba(26, 16, 8, 0.8); /* Text color */
         text-align: center; /* Center text */
         text-decoration: none; /* Remove default text underline */
-        margin-left: 17px; /* Space between links */
         display: inline-block; /* Inline block to properly display spacing */
         font-size: 17px; /* Font size for navigation text */
-        margin-top: 7px;
+        font-family: Tahoma, Helvetica, sans-serif;
+        position: relative;
+        margin: 10px;
+ 
+
     }
+    a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(241, 189, 141, 0.8);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    
+    }
+
+    a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+    }
+
+/* Presentational Styles */
 
     .pressed1:hover {
         color: rgba(241, 189, 141, 0.8); /* Teksta krāsa, kad pele tiek pārvilkta */
         transform: scale(1.2); /* Saites mērogošana uz augšu, kad pele ir virs tām */
     }
 
-    .pressed2:hover {
-        color: rgba(241, 189, 141, 0.8); /* Teksta krāsa, kad pele tiek pārvilkta */
-        transform: scale(1.2); /* Saites mērogošana uz augšu, kad pele ir virs tām */
-    }
+    
     
     @media (max-width: 500px) {
         .fa {
@@ -173,7 +192,6 @@
     }
 </style>
 <script>
-
 document.addEventListener('DOMContentLoaded', () => {
     const search = document.querySelector('.search');
     const btn = document.querySelector('.btn');
@@ -181,7 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btn) {
         btn.addEventListener('click', () => {
-            search.classList.toggle('active');
+            if (input.value.trim() === '') {
+                search.classList.toggle('active');
+            } else {
+                input.focus();
+            }
         });
     }
 });
