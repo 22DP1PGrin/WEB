@@ -5,9 +5,9 @@
             <div class="navbar">
                 <a href="/html/index.html"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Attēls ar grāmatas rakstīšanu -->
                 <p>&nbsp&nbsp</p>
-                <a class="active" href="../html/index.html"><i style="font-size:17px" class="fa">&#xf015;</i> Home</a> <!-- Saite uz kontaktu lapu -->
+                <a class="pressed1" href="../html/index.html"><i style="font-size:17px" class="fa">&#xf015;</i> Home</a> <!-- Saite uz kontaktu lapu -->
                 <div class="dropdown"> <!-- Izveidojam nolaižamo sarakstu -->
-                    <p class="active"><i style="font: size 14px" class="fa">&#xf013;</i> Service</p> <!-- Aktīvā saite, kas parāda nolaižamā saraksta nosaukumu -->
+                    <p class="pressed1"><i style="font: size 14px" class="fa">&#xf013;</i> Service</p> <!-- Aktīvā saite, kas parāda nolaižamā saraksta nosaukumu -->
                     <div class="dropdown-content"> <!-- Nolaižamā satura konteiners -->
                         <a href="../html/abou_us.html">About us</a> <!-- Saite uz bibliotēkas piekļuvi -->
                         <a href="../html/Functionality.html">Functionality</a> <!-- Saite uz funkcionalitāti -->
@@ -15,13 +15,13 @@
                     </div>
                 </div>
                 
-                <a class="active" href="../html/Contact.html"><i style="font-size:14px;" class="fa">&#xf0e0;</i> Contact</a> <!-- Saite uz lapu "Par mums" -->
+                <a class="pressed1" href="../html/Contact.html"><i style="font-size:14px;" class="fa">&#xf0e0;</i> Contact</a> <!-- Saite uz lapu "Par mums" -->
             </div>  
             <div class="account"> <!-- Bloks konta pārvaldīšanai -->
-                <a class="active2" href="#SigIn"><i style="font-size:14px" class="fa">&#xf2bd;</i> Sign in</a> <!-- Saite uz reģistrācijas lapu -->
-                <a class="active2" href="#LogIn"> <i style="font-size:14px" class="fa">&#xf2be;</i> Log in</a> <!-- Saite uz pierakstīšanās lapu -->
+                <a class="pressed2" href="#SigIn"><i style="font-size:14px" class="fa">&#xf2bd;</i> Sign in</a> <!-- Saite uz reģistrācijas lapu -->
+                <a class="pressed2" href="#LogIn"> <i style="font-size:14px" class="fa">&#xf2be;</i> Log in</a> <!-- Saite uz pierakstīšanās lapu -->
                 <div class="search">
-                    <input type="text" class="input" placeholder="Search...">
+                    <input type="text" class="input" placeholder="Meklēt...">
                     <button class="btn">
                         <i class="fa fa-search" aria-hidden="true" style="font-size:14px; color: rgba(26, 16, 8, 0.8);;"></i>
                     </button>
@@ -83,7 +83,7 @@
         display: block; /* Parādām nolaižamo saturu, kad pele ir virs nolaižamā saraksta */
     }
 
-    .active{
+    .pressed1{
         color: rgba(26, 16, 8, 0.8); /*Teksta krāsa */
         text-align: center; /* Centrējam tekstu */
         text-decoration: none; /* Noņemam noklusēto teksta apakšsvītrojumu */
@@ -92,11 +92,13 @@
         cursor: pointer;
     }
 
+
+
     .activeother{
         .context-menu {cursor: context-menu;}
     }
 
-    .active2{
+    .pressed2{
         color: rgba(26, 16, 8, 0.8); /* Text color */
         text-align: center; /* Center text */
         text-decoration: none; /* Remove default text underline */
@@ -106,12 +108,12 @@
         margin-top: 7px;
     }
 
-    .active:hover {
+    .pressed1:hover {
         color: rgba(241, 189, 141, 0.8); /* Teksta krāsa, kad pele tiek pārvilkta */
         transform: scale(1.2); /* Saites mērogošana uz augšu, kad pele ir virs tām */
     }
 
-    .active2:hover {
+    .pressed2:hover {
         color: rgba(241, 189, 141, 0.8); /* Teksta krāsa, kad pele tiek pārvilkta */
         transform: scale(1.2); /* Saites mērogošana uz augšu, kad pele ir virs tām */
     }
@@ -165,6 +167,10 @@
         opacity: 1; 
         margin: 5px;
     }
+
+    .input:focus {
+        outline: none; /* Убирает стандартную рамку браузера */
+    }
 </style>
 <script>
 
@@ -176,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btn) {
         btn.addEventListener('click', () => {
             search.classList.toggle('active');
-            input.focus();
         });
     }
 });
