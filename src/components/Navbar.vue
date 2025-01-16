@@ -5,17 +5,10 @@
             <div class="navbar">
                 <a href="/html/index.html"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Attēls ar grāmatas rakstīšanu -->
                 <p>&nbsp&nbsp</p>
-                <a class="pressed1" href="../html/index.html"><i style="font-size:17px" class="fa">&#xf015;</i> Home</a> <!-- Saite uz kontaktu lapu -->
-                <div class="dropdown"> <!-- Izveidojam nolaižamo sarakstu -->
-                    <p class="pressed1"><i style="font: size 14px" class="fa">&#xf013;</i> Service</p> <!-- Aktīvā saite, kas parāda nolaižamā saraksta nosaukumu -->
-                    <div class="dropdown-content"> <!-- Nolaižamā satura konteiners -->
-                        <a href="../html/abou_us.html">About us</a> <!-- Saite uz bibliotēkas piekļuvi -->
-                        <a href="../html/Functionality.html">Functionality</a> <!-- Saite uz funkcionalitāti -->
-                        <a href="../html/Rules.html">Rules</a> <!-- Saite uz saites noteikumi -->
-                    </div>
-                </div>
-                
-                <a class="pressed1" href="../html/Contact.html"><i style="font-size:14px;" class="fa">&#xf0e0;</i> Contact</a> <!-- Saite uz lapu "Par mums" -->
+                <a class="pressed1" href="../html/index.html"><i style="font-size:16px" class="fa">&#xf02d;</i> Bibliotēka</a> <!-- Saite uz kontaktu lapu -->
+                <a class="pressed1" href="../html/Contact.html"><i style="font-size:16px;" class="fa">&#xf02e;</i> Manas grāmatas</a> <!-- Saite uz lapu "Par mums" -->
+                <a class="pressed1"><i style="font: size 16px" class="fa">&#xf040;</i> Rakstīšana</a> <!-- Aktīvā saite, kas parāda nolaižamā saraksta nosaukumu -->
+    
             </div>  
             <div class="account"> <!-- Bloks konta pārvaldīšanai -->
                 <a class="pressed2" href="#SigIn"><i style="font-size:16px" class="fa">&#xf2bd;</i> Reģistrācija</a> <!-- Saite uz reģistrācijas lapu -->
@@ -23,7 +16,7 @@
                 <div class="search">
                     <input type="text" class="input" placeholder="Meklēt...">
                     <button class="btn">
-                        <i class="fa fa-search" aria-hidden="true" style="font-size:14px; color: rgba(26, 16, 8, 0.8);;"></i>
+                        <i style="font-size:14px" class="fa">&#xf002;</i>
                     </button>
                 </div>
             </div>    
@@ -41,6 +34,7 @@
         align-items: center; /* Elementu vertikāla izlīdzināšana */
         background-color: #c58667; /* Fona krāsa ar gradientu */
         height: 55px; /* Augstums */
+        box-shadow: rgba(26, 16, 8, 0.8) 0px 0px 15px; /* Ēna navigācijas joslas apakšā */
     }
 
     .navigation-bar > div {
@@ -87,10 +81,10 @@
         color: rgba(26, 16, 8, 0.8); /*Teksta krāsa */
         text-align: center; /* Centrējam tekstu */
         text-decoration: none; /* Noņemam noklusēto teksta apakšsvītrojumu */
-        margin-left: 17px; /* Atstarpes starp saitēm */
         font-size: 17px; /* Fonta izmērs navigācijas tekstam */
         cursor: pointer;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Tahoma, Helvetica, sans-serif;
+        margin: 10px;
     }
 
     .activeother{
@@ -106,36 +100,26 @@
         font-family: Tahoma, Helvetica, sans-serif;
         position: relative;
         margin: 10px;
- 
 
     }
-    a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: rgba(241, 189, 141, 0.8);
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
     
-    }
+    .pressed2:hover .fa{
+        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
 
-    a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
     }
+    .pressed2:hover {
+        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
+    }
+    .pressed1:hover .fa{
+        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
 
+    }
+    .pressed1:hover{
+        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
+    }
+    
 /* Presentational Styles */
 
-    .pressed1:hover {
-        color: rgba(241, 189, 141, 0.8); /* Teksta krāsa, kad pele tiek pārvilkta */
-        transform: scale(1.2); /* Saites mērogošana uz augšu, kad pele ir virs tām */
-    }
-
-    
     
     @media (max-width: 500px) {
         .fa {
@@ -187,9 +171,25 @@
         margin: 5px;
     }
 
+    .input{
+        color: rgba(26, 16, 8, 0.8);
+        font-family: Tahoma, Helvetica, sans-serif;
+    }
+    
     .input:focus {
         outline: none; /* Убирает стандартную рамку браузера */
     }
+    .btn:hover {
+        border-color: rgba(247, 186, 146, 0.8); /* Change border color on hover */
+    }
+    .btn:hover .fa {
+        color: rgba(247, 186, 146, 0.8);
+    }
+    .fa{
+        color: rgba(26, 16, 8, 0.8);
+
+    }
+ 
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
