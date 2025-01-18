@@ -17,17 +17,11 @@
 <script>
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import Cards from '@/components/Cards.vue';
-import MainInfo from '@/components/MainInfo.vue';
-import BonusInfo from '@/components/BonusInfo.vue';
 
 export default{
   components: {
     Navbar,
     Footer,
-    Cards,
-    MainInfo,
-    BonusInfo
   }
 }
 </script>

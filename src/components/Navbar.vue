@@ -3,18 +3,18 @@
     <header>
         <div class="navigation-bar" id="navigation">
             <div class="navbar">
-                <a href="/html/index.html"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Attēls ar grāmatas rakstīšanu -->
+                <a href="/html/index.html"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Saite uz sākumlapu un logo -->
                 <p>&nbsp&nbsp</p>
-                <a class="pressed1" href="../html/index.html"><i style="font-size:16px" class="fa">&#xf02d;</i> Bibliotēka</a> <!-- Saite uz kontaktu lapu -->
-                <a class="pressed1" href="../html/Contact.html"><i style="font-size:16px;" class="fa">&#xf02e;</i> Manas grāmatas</a> <!-- Saite uz lapu "Par mums" -->
-                <a class="pressed1"><i style="font: size 16px" class="fa">&#xf040;</i> Rakstīšana</a> <!-- Aktīvā saite, kas parāda nolaižamā saraksta nosaukumu -->
+                <a class="pressed1" href="../html/Library.html"><i style="font-size:16px" class="fa">&#xf02d;</i> Bibliotēka</a> <!-- Saite uz lapu "Bibliotēka" -->
+                <a class="pressed1" href="../html/Bookmarks.html"><i style="font-size:16px;" class="fa">&#xf02e;</i> Grāmatzīmes</a> <!-- Saite uz lapu "Grāmatzīmes" -->
+                <a class="pressed1"><i style="font: size 16px" class="fa">&#xf040;</i> Rakstīšana</a> <!-- Saite uz lapu "Rakstīšana" -->
     
             </div>  
             <div class="account"> <!-- Bloks konta pārvaldīšanai -->
                 <a class="pressed2" href="#SigIn"><i style="font-size:16px" class="fa">&#xf2bd;</i> Reģistrācija</a> <!-- Saite uz reģistrācijas lapu -->
                 <a class="pressed2" href="#LogIn"> <i style="font-size:16px" class="fa">&#xf2be;</i> Pieslēgties</a> <!-- Saite uz pierakstīšanās lapu -->
-                <div class="search">
-                    <input type="text" class="input" placeholder="Meklēt...">
+                <div class="search"> <!-- Meklēšanas josla -->
+                    <input type="text" class="input" placeholder="Meklēt grāmatu..."> <!-- Ievades lauks meklēšanai -->
                     <button class="btn">
                         <i style="font-size:14px" class="fa">&#xf002;</i>
                     </button>
@@ -29,171 +29,139 @@
 
     /* Navigācijas josla */
     .navigation-bar{
-        display: flex; /* Flexbox izkārtojums navigācijai */
-        justify-content: space-between; /* Atstarpes starp navigācijas elementiem */
+        display: flex; /* Flexbox izkārtojums */
         align-items: center; /* Elementu vertikāla izlīdzināšana */
-        background-color: #c58667; /* Fona krāsa ar gradientu */
-        height: 55px; /* Augstums */
-        box-shadow: rgba(26, 16, 8, 0.8) 0px 0px 15px; /* Ēna navigācijas joslas apakšā */
+        background-color: #c58667; /* Fona krāsa navigācijas joslas augšā */
+        height: 55px; 
+        box-shadow: rgba(63, 31, 4, 0.8) 0px 0px 15px; /* Ēna navigācijas joslas apakšā */
     }
 
+
     .navigation-bar > div {
-        margin: 2px; /* Malas ap katru navigācijas elementu */
-        padding: 2px; /* Atstarpe iekšpusē */
+        margin: 2px; /* Atstarpe ap elementiem */
+        padding: 2px; /* Iekšējās atstarpes */
     }
 
     .navbar{
         display: flex; /* Flexbox izkārtojums */
         align-items: center; /* Elementu vertikāla izlīdzināšana */
         flex-grow: 1; /* Izplešas, lai aizpildītu vietu */
-        transition: transform 0.3s ease; /* Pārejas efekts uz transformācijām */
-
     }
 
+    /* Konta pārvaldīšanas bloks */
     .account{
         display: flex; /* Flexbox izkārtojums konta sadaļai */
         margin-left: auto; /* Novietojam konta bloku pa labi */
-        text-align: center; /* Center text */
+        text-align: center; /* Centrējam tekstu */
     }
 
-    .dropdown-content {
-        display: none; /* Paslēpt nolaižamo saturu pēc noklusējuma */
-        position: absolute; /* Absolūta pozīcija, lai nolaižamais saturs tiktu parādīts virs citiem elementiem */
-        background-color: #c58667; /* Fona krāsa nolaižamajam saturam */
-        min-width: 120px; /* Minimālais platums nolaižamajam saturam */
-    }
-
-    .dropdown-content a {
-        color: rgba(26, 16, 8, 0.8); /* Saite teksta krāsa */
-        padding: 10px 10px; /* Iekšējās atstarpes ap saiti */
-        text-decoration: none; /* Noņemam noklusēto apakšsvītrojumu */
-        display: block; /* Iestatām saites kā bloku, lai aizpildītu visu platumu */
-    }
-    .dropdown-content a:hover {
-        background-color: #f5b89a; /* Fona krāsa, kad pele ir virs saites */
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block; /* Parādām nolaižamo saturu, kad pele ir virs nolaižamā saraksta */
-    }
-
+    /* Navigācijas joslas saites */
     .pressed1{
         color: rgba(26, 16, 8, 0.8); /*Teksta krāsa */
         text-align: center; /* Centrējam tekstu */
         text-decoration: none; /* Noņemam noklusēto teksta apakšsvītrojumu */
         font-size: 17px; /* Fonta izmērs navigācijas tekstam */
-        cursor: pointer;
-        font-family: Tahoma, Helvetica, sans-serif;
-        margin: 10px;
-    }
-
-    .activeother{
-        .context-menu {cursor: context-menu;}
+        cursor: pointer; /* Mainam peles formu uz rādītāju */
+        font-family: Tahoma, Helvetica, sans-serif; /* Fonta tips */
+        margin: 10px; /* Atstarpe ap elementiem */
     }
 
     .pressed2{
-        color: rgba(26, 16, 8, 0.8); /* Text color */
-        text-align: center; /* Center text */
-        text-decoration: none; /* Remove default text underline */
-        display: inline-block; /* Inline block to properly display spacing */
-        font-size: 17px; /* Font size for navigation text */
-        font-family: Tahoma, Helvetica, sans-serif;
-        position: relative;
-        margin: 10px;
+        color: rgba(26, 16, 8, 0.8); /*Teksta krāsa */
+        text-align: center; /* Centrējam tekstu */
+        text-decoration: none; /* Noņemam noklusēto teksta apakšsvītrojumu */
+        font-size: 17px; /* Fonta izmērs navigācijas tekstam */
+        font-family: Tahoma, Helvetica, sans-serif; /* Fonta tips */
+        margin: 10px; /* Atstarpe ap elementiem */
 
     }
     
     .pressed2:hover .fa{
-        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
+        color: rgba(255, 187, 142, 0.8); /*Teksts, kad pele tiek pārvilkta */
 
     }
     .pressed2:hover {
-        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
+        color: rgba(255, 187, 142, 0.8); /*Teksts, kad pele tiek pārvilkta */
     }
     .pressed1:hover .fa{
-        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
+        color: rgba(255, 187, 142, 0.8); /*Teksts, kad pele tiek pārvilkta */
 
     }
     .pressed1:hover{
-        color: rgba(247, 186, 146, 0.8); /* Text color when hovered */
+        color: rgba(255, 187, 142, 0.8); /*Teksts, kad pele tiek pārvilkta */
     }
     
-/* Presentational Styles */
-
-    
-    @media (max-width: 500px) {
-        .fa {
-        display: none !important; /* Inore citus noteikumus */
-        }
-    }
-
-    /* search bar */
+    /* Meklēšanas josla */
     .search {
-        position: relative;
-        display: flex; /* Use flexbox to align items */
-        align-items: center; /* Center items vertically */
+        display: flex;  /* Flexbox izkārtojums konta sadaļai */
+        align-items: center;  /* Elementu vertikāla izlīdzināšana */
     }
 
     .search:hover {
-        transform: none;
+        transform: none; /*noņemam transformāciju, kad pele tiek pārvilkta */
     }
 
+    /* Ievades lauks meklēšanai */
     .search .input {
-        background-color: #ffffff;
-        border: 0;
-        border-radius: 20px;
-        border-color: rgba(26, 16, 8, 0.8);
-        font-size: 15px;
-        padding: 10px;
-        height: 10px; /* Adjusted height for better visibility */
-        width: 0; /* Start with width 0 */
-        overflow: hidden; /* Hide overflow */
-        opacity: 0;
+        background-color: #ffffff; /*Krasa fona */
+        border: 0; /* Noņemam apmales */
+        border-radius: 20px; /* Noapaļo apmalas*/
+        border-color: rgba(26, 16, 8, 0.8); /* Mainam apmales krāsu */
+        font-size: 15px; /* Fonta izmērs */
+        padding: 10px; /* Iekšējās atstarpes */
+        height: 10px; 
+        width: 0; /* Sakam ar nulles platumu */
+        overflow: hidden; /* Paslēpjam pārplūdes elementus */
+        opacity: 0; /* Paslēpjam elementu */
     }
 
+    /* Poga meklēšanai */
     .search .btn {
-        background-color: #c58667; /* Set background color */
-        border: 2px solid rgba(26, 16, 8, 0.8); /* Remove border */
+        background-color: #c58667; 
+        border: 2px solid rgba(26, 16, 8, 0.8); /*apmales vērtības */
         border-radius: 20px;
-        padding: 7px; /* Add padding */
-        cursor: pointer; /* Change cursor to pointer */
-        transition: transform 0.3s ease; /* Add transition for smooth transform */
-        outline: none; /* Remove outline */
-        margin-right: 10px; /* Add margin to the right */
-        width: 33px; /* Set width */
+        padding: 7px; /* Iekšējās atstarpes */
+        cursor: pointer; /* Peles formāts */
+        outline: none; /* Noņemam noklusēto apmales stāvokli */
+        margin-right: 10px; /* Atstarpe no labās puses */
+        width: 33px; 
         height: 33px;
     }
 
+    /* Meklēšanas joslas aktīvā stāvoklis */
     .search.active .input {
-        width: 150px; /* Expanded width */
+        width: 150px; 
         height: 5px;
-        opacity: 1; 
+        opacity: 1; /* Parādam elementu */
         margin: 5px;
     }
 
     .input{
         color: rgba(26, 16, 8, 0.8);
-        font-family: Tahoma, Helvetica, sans-serif;
+        font-family: Tahoma, Helvetica, sans-serif; /* Fonta tips */
     }
     
     .input:focus {
-        outline: none; /* Убирает стандартную рамку браузера */
+        outline: none; /* Noņemam noklusēto apmales stāvokli */
     }
     .btn:hover {
-        border-color: rgba(247, 186, 146, 0.8); /* Change border color on hover */
+        border-color: rgba(255, 187, 142, 0.8); /* Mainam apmales krāsu, kad pele tiek pārvilkta */
     }
     .btn:hover .fa {
-        color: rgba(247, 186, 146, 0.8);
+        color: rgba(255, 187, 142, 0.8); /* Mainam ikonas krāsu, kad pele tiek pārvilkta */
     }
     .fa{
-        color: rgba(26, 16, 8, 0.8);
+        color: rgba(26, 16, 8, 0.8); 
 
     }
  
 </style>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const search = document.querySelector('.search');
+
+// Meklēšanas joslas funkcionalitāte
+document.addEventListener('DOMContentLoaded', () => { 
+    const search = document.querySelector('.search'); 
     const btn = document.querySelector('.btn');
     const input = document.querySelector('.input');
 
@@ -202,9 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (input.value.trim() === '') {
                 search.classList.toggle('active');
             } else {
-                input.focus();
+                input.focus(); 
             }
         });
     }
 });
+
 </script>

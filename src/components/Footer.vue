@@ -2,60 +2,74 @@
     <!-- Kājene ar saitēm uz dažādām lapām -->
 <footer id="footer">
     <div class="footer-container">
-        <div class="footer-section">
-            <ul class="footer-links">
-                <li><a href="#FAQ">FAQ</a></li> <!-- Saite uz atbalsta dienestu -->
-                <li><a href="#UserAgreement">User Agreement</a></li> <!-- Saite uz lietotāja līgumu -->
+            <ul class="footer-links">              
+                <li><a href="#Terms of Service">Pakalpojuma noteikumi</a></li> <!-- Saite uz lietotāja līgumu -->
+                <li><a href="#Content Policy">Satura politika</a></li> <!-- Saite uz satura politiku -->
+                <li><a href="#Content Policy">Privātuma politika</a></li> <!-- Saite uz privātuma politiku -->
+                <li><a href="#DMCA Policy">DMCA politika</a></li> <!-- Saite uz DMCA politiku -->
             </ul>
-        </div>
-        <div class="footer-section">
             <ul class="footer-links">
-                <li><a href="#Copyright">Copyright</a></li> <!-- Saite uz autortiesībām -->
-                <li><a href="#PrivacyPolicy">Privacy Policy</a></li> <!-- Saite uz privātumu -->
+                <li><a href="#FAQ">FAQ</a></li> <!-- Saite uz bieži uzdotiem jautājumiem -->
+                <li><a href="#PrivacyPolicy">Tehniskais atbalsts</a></li> <!-- Saite uz tehnisko atbalstu -->
             </ul>
-        </div>
     </div>
+    <p class="info">© 2025 Onlib. Visas tiesības paturētas.</p>
 </footer>
+
 
 </template>
 
 <style scoped> 
-    /* Footer */
+
+/* Kājenes stils */
 footer {
-    text-align: center; /* Teksta centrēšana */
-    background-image: linear-gradient(#f5b89a,#c58667,#704733); /* Fona attēla gradienta iestatījums */
-    justify-content: space-around; /* Telpas starp sadaļām */
-    padding: 25px; /* Atstarpe ap konteineru */
-    max-width: 100%; /* Veido maksimalo garums */
+    background-color: #c58667; /* Fona krāsa */
+    padding: 25px; /* Iekšējās atstarpes */
+    display: flex; /* Flexbox izkārtojums */
+    flex-direction: column; /* Kolonnas izkārtojums */
+    height: 115px; /* Augstums */
+    box-shadow: rgba(63, 31, 4, 0.8) 0px 0px 15px; /* Ēna navigācijas joslas apakšā */
+
 }
 
 .footer-container {
     display: flex; /* Flexbox izkārtojums */
-    justify-content: center; /* Centrējam kolonnas */
-}
-
-.footer-section {
-    margin: 0 30px; /* Atstarpe starp sadaļām */
+    align-items: center; /* Elementu vertikāla izlīdzināšana */
+    flex-direction: column; /* Kolonnas izkārtojums */
+    justify-content: center; /* Horizontāla izlīdzināšana */
+    gap: 10px; /* Atstarpe starp saitēm */
+    flex-grow: 1; /* Izplešas, lai aizpildītu vietu */
+    margin-top: 17px; /* Atstarpe no augšas */
 }
 
 .footer-links {
-    list-style: none; /* Noņemam saraksta marķierus */
-}
-
-.footer-links li {
-    margin: 5px 0; /* Atstarpe starp saraksta elementiem */
+    list-style: none; /* Noņemam saraksta punktus */
+    margin: 0; 
+    padding: 0px;
+    display: flex; 
+    gap: 15px;
+    justify-content: center;
 }
 
 .footer-links a {
     color: rgba(20, 13, 7, 0.8); /* Saites teksta krāsa */
     text-decoration: none; /* Noņemam apakšsvītrojumu */
-    transition: transform 0.3s ease; /* Gluda pāreja transformācijai */
-    display: inline-block; /* Nodrošinām, ka mērogošana darbojas pareizi */
+    font-size: 17px; /* Teksta izmērs */
+    font-family: Tahoma, Helvetica, sans-serif; /* Fonta tips */
+
 }
 
 .footer-links a:hover {
-    color: rgba(241, 189, 141, 0.8); /* Teksta krāsa saitēm, kad pele tiek pārvilkta */
-    transform: scale(1.2); /* Saites mērogošana uz augšu, kad pele ir virs tām */
+    color: rgba(255, 187, 142, 0.8); /* Teksta krāsa saitēm, kad pele tiek pārvilkta */
+
+}
+.info{
+    color: rgba(20, 13, 7, 0.8); /* Teksta krāsa */
+    font-size: 17px; /* Fonta izmērs */
+    font-family: Tahoma, Helvetica, sans-serif; /* Fonta tips */
+    margin-top: 35px; /* Atstarpe no augšas */
+    text-align: center; /* Centrējam tekstu */
+    cursor: context-menu; /* Peles formāts */
 }
 
 </style>
