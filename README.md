@@ -9,4 +9,4 @@ Tiešsaistes bibliotēka Onlib, kurā tiek glabātas dažādas grāmatas. Lietot
 * Jaunu grāmatu pievienošana vietnei un to rediģēšana.
 
 Projekta laikā tiks izmantotas šādas valodas:
-*PHP*, *MysQL*, *CSS* un *HTML*.
+*PHP*, *MysQL*, *CSS* *JS*, *HTML*.
