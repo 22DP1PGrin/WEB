@@ -3,12 +3,21 @@
     <header>
         <div class="navigation-bar" id="navigation">
             <div class="navbar">
-                <a href="/html/index.html"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Saite uz sākumlapu un logo -->
-                <p>&nbsp&nbsp</p>
+                <a href="/html/index.html" class="BigLogo"><img src="..\..\public\Images\Logo.jpg" ></a> <!-- Saite uz sākumlapu un logo -->
+            
                 <a class="pressed1" href="../html/Library.html"><i style="font-size:16px" class="fa">&#xf02d;</i> Bibliotēka</a> <!-- Saite uz lapu "Bibliotēka" -->
                 <a class="pressed1" href="../html/Bookmarks.html"><i style="font-size:16px;" class="fa">&#xf02e;</i> Grāmatzīmes</a> <!-- Saite uz lapu "Grāmatzīmes" -->
                 <a class="pressed1"><i style="font: size 16px" class="fa">&#xf040;</i> Rakstīšana</a> <!-- Saite uz lapu "Rakstīšana" -->
-    
+                
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+                <div id="myLinks">
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                </div>
             </div>  
             <div class="account"> <!-- Bloks konta pārvaldīšanai -->
                 <a class="pressed2" href="#SigIn"><i style="font-size:16px" class="fa">&#xf2bd;</i> Reģistrācija</a> <!-- Saite uz reģistrācijas lapu -->
@@ -34,8 +43,24 @@
         background-color: #c58667; /* Fona krāsa navigācijas joslas augšā */
         height: 55px; 
         box-shadow: rgba(63, 31, 4, 0.8) 0px 0px 15px; /* Ēna navigācijas joslas apakšā */
+        overflow: hidden;
+        position: relative;
     }
+    #myLinks {
+    display: none; /* Скрываем элемент */
+    flex-direction: column; /* Выравниваем элементы вертикально */
+    background-color: #c58667; /* Цвет фона */
+    position: absolute; /* Позиционируем относительно родителя */
+    top: 55px; /* Устанавливаем ниже навигации */
+    right: 0;
+    width: 100%; /* Меню будет занимать всю ширину */
+    z-index: 1000; /* Приоритет слоя */
+}
 
+/* Показываем блок, если добавлен класс active */
+    #myLinks.active {
+        display: flex;
+    }
 
     .navigation-bar > div {
         margin: 2px; /* Atstarpe ap elementiem */
@@ -154,7 +179,28 @@
         color: rgba(26, 16, 8, 0.8); 
 
     }
- 
+    
+    @media screen and (max-width: 1200px) {
+        .navigation-bar {
+            
+            height: auto; /* Augstumu uz automātisku */
+        }
+        .pressed1 {
+            display: none; /* Paslēpjam saites */
+        }
+        .pressed2 {
+            display: none; /* Paslēpjam saites */
+        }
+        .BigLogo {
+            display: none; /* Paslēpjam logo */
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .icon {
+            display: none; /* Paslēpjam meklēšanas joslu */
+        }
+        
+    }
 </style>
 
 <script>
@@ -174,6 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    window.myFunction = function() {
+        const x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    };
 });
 
 </script>
